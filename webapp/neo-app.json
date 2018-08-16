@@ -1,0 +1,75 @@
+{
+	"welcomeFile": "index.html",
+	"routes": [{
+			"path": "/sap/opu/odata",
+			"target": {
+				"type": "destination",
+				"name": "FA7_https",
+				"entryPath": "/sap/opu/odata"
+			},
+			"description": "FA7_https"
+		}, {
+			"path": "/",
+			"target": {
+				"type": "application",
+				"name": "parentneoapp",
+				"preferLocal": true
+			},
+			"description": "Parent neo-app.json"
+		}, {
+			"path": "/sap/bc/ui2/smi/rest_tunnel",
+			"target": {
+				"type": "destination",
+				"name": "FA7_https",
+				"entryPath": "/sap/bc/ui2/smi/rest_tunnel"
+			},
+			"description": "FA7_https"
+		},
+
+		{
+			"path": "/ui2",
+			"target": {
+				"type": "destination",
+				"name": "FA7_https",
+				"entryPath": "/ui2"
+			},
+			"description": "FA7_https"
+		},
+
+		{
+			"path": "/resources",
+			"target": {
+				"type": "service",
+				"name": "sapui5",
+				"entryPath": "/resources"
+
+			},
+			"description": " SAPUI5 Resources"
+		}, {
+			"path": "/test-resources",
+			"target": {
+				"type": "service",
+				"name": "sapui5",
+				"entryPath": "/test-resources"
+			},
+			"description": " SAPUI5 Test Resources"
+		}, {
+			"path": "/src/main/webapp/resources",
+			"target": {
+				"type": "service",
+				"name": "sapui5",
+				"entryPath": "/resources"
+
+			},
+			"description": " SAPUI5 Resources"
+		}, {
+			"path": "/src/main/webapp/test-resources",
+			"target": {
+				"type": "service",
+				"name": "sapui5",
+				"entryPath": "/test-resources"
+			},
+			"description": " SAPUI5 Test Resources"
+		}
+	]
+}

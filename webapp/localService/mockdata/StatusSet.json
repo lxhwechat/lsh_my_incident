@@ -1,0 +1,165 @@
+[{
+	"Guid": "dc7dd06b-7f09-4582-86b8-fb4ee0b2c5b7",
+	"EnableConfirm": true,
+	"EnableWithdraw": false,
+	"EnableUpload": true,
+	"SetWithdraw": false,
+	"SetConfirm": false,
+	"VisibleWithdraw": true,
+	"VisibleConfirm": true,
+	"ButtonTypeWithdraw": "Default",
+	"ButtonTypeConfirm": "Emphasized",
+	"TextString": "",
+	"TextMode" : "H",
+	"__metadata": {
+		"uri": "StatusSet(guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c5b7')",
+		"type": "AI_CRM_GW_MYMESSAGE_SRV.Status"
+	},
+	"MessageResultSet": {
+		"__deferred": {
+			"uri": "StatusSet(guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c5b7')/MessageResultSet"
+		}
+	}
+
+},
+
+{
+	"Guid": "dc7dd06b-7f09-4582-86b8-fb4ee0b2c5b8",
+	"EnableConfirm": false,
+	"EnableWithdraw": false,
+	"EnableUpload": true,
+	"SetWithdraw": false,
+	"SetConfirm": false,
+	"VisibleWithdraw": true,
+	"VisibleConfirm": true,
+	"ButtonTypeWithdraw": "Default",
+	"ButtonTypeConfirm": "Default",
+	"TextString": "",
+	"__metadata": {
+		"uri": "StatusSet(guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c5b8')",
+		"type": "AI_CRM_GW_MYMESSAGE_SRV.Status"
+	},
+	"MessageResultSet": {
+		"__deferred": {
+			"uri": "StatusSet(guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c5b8')/MessageResultSet"
+		}
+	}
+},
+
+{
+	"Guid": "dc7dd06b-7f09-4582-86b8-fb4ee0b2c5b9",
+	"EnableConfirm": false,
+	"EnableWithdraw": true,
+	"EnableUpload": true,
+	"SetWithdraw": false,
+	"SetConfirm": false,
+	"VisibleWithdraw": true,
+	"VisibleConfirm": true,
+	"ButtonTypeWithdraw": "Emphasized",
+	"ButtonTypeConfirm": "Default",
+	"TextString": "",
+	"__metadata": {
+		"uri": "StatusSet(guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c5b9')",
+		"type": "AI_CRM_GW_MYMESSAGE_SRV.Status"
+	},
+	"MessageResultSet": {
+		"__deferred": {
+			"uri": "StatusSet(guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c5b9')/MessageResultSet"
+		}
+	}
+},
+
+{
+	"Guid": "dc7dd06b-7f09-4582-86b8-fb4ee0b2c510",
+	"EnableConfirm": false,
+	"EnableWithdraw": true,
+	"EnableUpload": true,
+	"SetWithdraw": false,
+	"SetConfirm": false,
+	"VisibleWithdraw": true,
+	"VisibleConfirm": true,
+	"ButtonTypeWithdraw": "Emphasized",
+	"ButtonTypeConfirm": "Default",
+	"TextString": "",
+	"__metadata": {
+		"uri": "StatusSet(guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c510')",
+		"type": "AI_CRM_GW_MYMESSAGE_SRV.Status"
+	},
+	"MessageResultSet": {
+		"__deferred": {
+			"uri": "StatusSet(guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c510')/MessageResultSet"
+		}
+	}
+},
+
+{
+	"Guid": "dc7dd06b-7f09-4582-86b8-fb4ee0b2c511",
+	"EnableConfirm": true,
+	"EnableWithdraw": false,
+	"EnableUpload": true,
+	"SetWithdraw": false,
+	"SetConfirm": false,
+	"VisibleWithdraw": true,
+	"VisibleConfirm": true,
+	"ButtonTypeWithdraw": "Default",
+	"ButtonTypeConfirm": "Emphasized",
+	"TextString": "",
+	"__metadata": {
+		"uri": "StatusSet(guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c511')",
+		"type": "AI_CRM_GW_MYMESSAGE_SRV.Status"
+	},
+	"MessageResultSet": {
+		"__deferred": {
+			"uri": "StatusSet(guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c511')/MessageResultSet"
+		}
+	}
+},
+
+{
+	"Guid": "dc7dd06b-7f09-4582-86b8-fb4ee0b2c512",
+	"EnableConfirm": true,
+	"EnableWithdraw": true,
+	"EnableUpload": true,
+	"SetWithdraw": false,
+	"SetConfirm": false,
+	"VisibleWithdraw": true,
+	"VisibleConfirm": true,
+	"ButtonTypeWithdraw": "Default",
+	"ButtonTypeConfirm": "Emphasized",
+	"TextString": "",
+	"__metadata": {
+		"uri": "StatusSet(guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c512')",
+		"type": "AI_CRM_GW_MYMESSAGE_SRV.Status"
+	},
+	"MessageResultSet": {
+		"__deferred": {
+			"uri": "StatusSet(guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c512')/MessageResultSet"
+		}
+	}
+},
+
+
+{
+	"Guid": "1c7dd06b-7f09-4582-86b8-fb4ee0b2c5b7",
+	"EnableConfirm": false,
+	"EnableWithdraw": false,
+	"EnableUpload": false,
+	"SetWithdraw": false,
+	"SetConfirm": false,
+	"VisibleWithdraw": false,
+	"VisibleConfirm": false,
+	"ButtonTypeWithdraw": "Default",
+	"ButtonTypeConfirm": "Default",
+	"TextString": "",
+	"__metadata": {
+		"uri": "StatusSet(guid'1c7dd06b-7f09-4582-86b8-fb4ee0b2c5b7')",
+		"type": "AI_CRM_GW_MYMESSAGE_SRV.Status"
+	},
+	"MessageResultSet": {
+		"__deferred": {
+			"uri": "StatusSet(guid'1c7dd06b-7f09-4582-86b8-fb4ee0b2c5b7')/MessageResultSet"
+		}
+	}
+
+}
+]

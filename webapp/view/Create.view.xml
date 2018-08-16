@@ -1,0 +1,91 @@
+<core:View xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" 	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:c="sap.ui.core"  xmlns:ui="sap.ca.ui" controllerName="zwx.sm.itsm.myincidents.view.Create"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"  >
+  	<html:style>
+		.myContentStyle {
+		margin: 0.5em 0 0.5em 0.5em;
+		}
+	</html:style>
+	<Page id="createPage"
+		class="sapUiFioriObjectPage"
+		title="{i18n>CREATE_INCIDENT_TITLE}"
+		showNavButton = "true"
+		navButtonPress = "onNavBack" >
+		<l:Grid
+			defaultSpan="L12 M12 S12"
+			width="auto">
+  		<l:content>
+				<!--Extension Point for Icon Tab "Details" tab content -->
+				<core:ExtensionPoint name="extFormOnCreate" >
+					<f:SimpleForm id="createForm"
+						layout="ResponsiveGridLayout"
+						editable="true"
+						title="{i18n>CREATE_INCIDENT_FORM_TITLE}"
+						minWidth="1024" >
+						<f:content>
+							<Label id ="ShortTextLabel"
+								required = "true"
+								text="{i18n>INPUT_SHORTTEXT_LABEL}"/>
+							<Input id = "ShortTextInput"
+								type="Text"
+								placeholder="{i18n>INPUT_SHORTTEXT_PLACEHOLDER}"
+								valueStateText="{i18n>INPUT_SHORTTEXT_ERROR_STATE}"
+								value="{
+                  path : '/title',
+                  type : 'sap.ui.model.type.String',
+                  constraints : {
+                    minLength: 1,
+                    maxLength: 40
+                  }
+                }"
+								liveChange = "onTitleInputLiveChange" />
+							<!--/Input>change="onTextChange"/-->
+							<Label id="PriorityLabel" text="{i18n>INPUT_PRIORITY_LABEL}" />
+							<Select id = "PrioritySelect"
+								autoAdjustWidth="true"
+								items="{
+                  path: '/PrioritySet',
+                  sorter: {
+										path: 'Description'
+                  }
+                }"
+                change="onChangePriority"
+                app:selectedKey = "{DefaultPrio}"
+                ariaLabelledBy="PriorityLabel" >
+								<core:Item key="{PrioCode}" text="{Description}" />
+							</Select>
+							<Label id="ComponentLabel" text="{i18n>INPUT_COMPONENT_LABEL}" />
+							<Input id = "ComponentInput"
+								type= "Text"
+                placeholder="{i18n>INPUT_COMPONENT_PLACEHOLDER}"
+                enabled="true"
+								editable="true"
+								showValueHelp="true"
+								valueHelpOnly="true"
+                valueHelpRequest="onComponentValueHelp"
+                valueStateText="{i18n>INPUT_COMPONENT_ERROR_STATE_VERY_HIGH}"
+              />
+							<Label id="DescriptionTextAreaLabel" text="{i18n>TEXTAREA_DESCRIPTION_LABEL}" />
+							<TextArea rows = "10"
+								id = "DescriptionTextArea"
+								placeholder = "{i18n>TEXTAREA_DESCRIPTION_PLACEHOLDER}" >
+							</TextArea>
+						</f:content>
+					</f:SimpleForm>
+				</core:ExtensionPoint >
+			</l:content>
+		</l:Grid>
+		<footer>
+			<Bar>
+				<contentRight>
+					<Button id="SaveButton" text="{i18n>BUTTON_SAVE}" type="Emphasized" press="onSave" />
+					<Button id="CancelButton" text="{i18n>BUTTON_CANCEL}" type="Default" press="onNavBack" />
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</core:View>

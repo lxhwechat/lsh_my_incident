@@ -1,0 +1,372 @@
+[{
+	"Guid": "dc7dd06b-7f09-4582-86b8-fb4ee0b2c5b7",
+	"ObjectId": "800000123",
+	"ProcessType": "SMIN",
+	"ProcessTypeTxt": "Incident",
+	"Description": "Issue with my Laptop",
+	"IntroText": "Hello, I have a big Issue with my Laptop. It is not working and it smells bad...",
+	"CreatedAtDateFormatted": "16.02.17",
+	"ChangedAtDateFormatted": "21.02.17",
+	"PostingDate": "/Date(1480039098000)/",
+	"ChangedAtDate": "/Date(1490798037000)/",
+	"Priority": "3",
+	"PriorityTxt": "3: Medium",
+	"PriorityState": "None",
+	"Concatstatuser": "Solution Provided",
+	"ActionRequired": true,
+	"StillOpen": true,
+	"Icon": "sap-icon://notification",
+	"SoldToPartyName": "SAP SE",
+	"ServiceTeamName": "Support Team Germany",
+	"PersonRespName": "Jim Support",
+	"ReporterName": "Max Mock",
+	"AddContactName": "",
+	"CategoryTxt": "Hardware",
+	"ConfigItemTxt": "Lenovo t520",
+	"CreatedByName": "Max Mock",
+	"SAPComponent": "SV-SMG-SUP",
+	"__metadata": {
+		"uri": "MessageResultSet(guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c5b7')",
+		"type": "AI_CRM_GW_MYMESSAGE_SRV.MessageResult"
+	},
+	"AttachmentSet": {
+		"__deferred": {
+			"uri": "MessageResultSet(guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c5b7')/AttachmentSet"
+		}
+	},
+	"StatusSet": {
+		"__deferred": {
+			"uri": "MessageResultSet(guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c5b7')/StatusSet"
+		}
+	},
+	"TextSet": {
+		"__deferred": {
+			"uri": "MessageResultSet(guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c5b7')/TextSet"
+		}
+	},
+	"CustomerHSet": {
+		"__deferred": {
+			"uri": "MessageResultSet(guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c5b7')/CustomerHSet"
+		}
+	}
+},
+
+{
+	"Guid": "dc7dd06b-7f09-4582-86b8-fb4ee0b2c5b8",
+	"ObjectId": "800000189",
+	"ProcessType": "SMIN",
+	"ProcessTypeTxt": "Incident",
+	"Description": "System FA7 is down",
+	"IntroText": "Hello, the system FA7 is currently not available. When i try to logon I get an error message.",
+	"CreatedAtDateFormatted": "18.02.17",
+	"ChangedAtDateFormatted": "23.02.17",
+	"PostingDate": "/Date(1480039098000)/",
+	"ChangedAtDate": "/Date(1490790837000)/",
+	"Priority": "2",
+	"PriorityTxt": "2: High",
+	"PriorityState": "None",
+	"Concatstatuser": "In Process",
+	"ActionRequired": false,
+	"StillOpen": true,
+	"Icon": "",
+	"SoldToPartyName": "SAP SE",
+	"ServiceTeamName": "Support Team Germany",
+	"PersonRespName": "Jack Help",
+	"ReporterName": "Max Mock",
+	"AddContactName": "",
+	"CategoryTxt": "System - Access",
+	"ConfigItemTxt": "FA7 200",
+	"CreatedByName": "Max Mock",
+	"SAPComponent": "SV-SMG-SUP-TST",
+	"__metadata": {
+		"uri": "MessageResultSet(guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c5b8')",
+		"type": "AI_CRM_GW_MYMESSAGE_SRV.MessageResult"
+	},
+	"AttachmentSet": {
+		"__deferred": {
+			"uri": "MessageResultSet(guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c5b8')/AttachmentSet"
+		}
+	},
+	"StatusSet": {
+		"__deferred": {
+			"uri": "MessageResultSet(guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c5b8')/StatusSet"
+		}
+	},
+	"TextSet": {
+		"__deferred": {
+			"uri": "MessageResultSet(guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c5b8')/TextSet"
+		}
+	},
+	"CustomerHSet": {
+		"__deferred": {
+			"uri": "MessageResultSet(guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c5b8')/CustomerHSet"
+		}
+	}
+},
+
+{
+	"Guid": "dc7dd06b-7f09-4582-86b8-fb4ee0b2c5b9",
+	"ObjectId": "800002323",
+	"ProcessType": "SMIN",
+	"ProcessTypeTxt": "Incident",
+	"Description": "Printer broken",
+	"IntroText": "Hello, the printer HP Laserjet 762 on my Floor is broken. It won't print. If you turn it on it immediately shuts itself down. Please help I desperately need to print some stuff",
+	"CreatedAtDateFormatted": "11.02.17",
+	"ChangedAtDateFormatted": "22.02.17",
+	"PostingDate": "/Date(1470079098000)/",
+	"ChangedAtDate": "/Date(1470079198000)/",
+	"Priority": "1",
+	"PriorityTxt": "1: Very High",
+	"PriorityState": "Error",
+	"Concatstatuser": "New",
+	"ActionRequired": false,
+	"StillOpen": true,
+	"Icon": "",
+	"SoldToPartyName": "SAP SE",
+	"ServiceTeamName": "Support Team Germany",
+	"PersonRespName": "Jack Help",
+	"ReporterName": "Max Mock",
+	"AddContactName": "",
+	"CategoryTxt": "Hardware - Printer",
+	"ConfigItemTxt": "HP Printer 4710",
+	"CreatedByName": "Max Mock",
+	"SAPComponent": "SV-SMG-SUP-TST",
+	"__metadata": {
+		"uri": "MessageResultSet(guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c5b9')",
+		"type": "AI_CRM_GW_MYMESSAGE_SRV.MessageResult"
+	},
+	"AttachmentSet": {
+		"__deferred": {
+			"uri": "MessageResultSet(guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c5b9')/AttachmentSet"
+		}
+	},
+	"StatusSet": {
+		"__deferred": {
+			"uri": "MessageResultSet(guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c5b9')/StatusSet"
+		}
+	},
+	"TextSet": {
+		"__deferred": {
+			"uri": "MessageResultSet(guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c5b9')/TextSet"
+		}
+	},
+	"CustomerHSet": {
+		"__deferred": {
+			"uri": "MessageResultSet(guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c5b9')/CustomerHSet"
+		}
+	}
+},
+
+{
+	"Guid": "dc7dd06b-7f09-4582-86b8-fb4ee0b2c510",
+	"ObjectId": "800004211",
+	"ProcessType": "SMIN",
+	"ProcessTypeTxt": "Incident",
+	"Description": "UNCAUGHT_EXCEPTION in System FA7",
+	"IntroText": "Hi, i got an UNCAUGHT_EXCEPTION dump when starting the application",
+	"CreatedAtDateFormatted": "11.01.16",
+	"ChangedAtDateFormatted": "24.01.16",
+	"PostingDate": "/Date(1470059098000)/",
+	"ChangedAtDate": "/Date(1470059099900)/",
+	"Priority": "4",
+	"PriorityTxt": "4: Low",
+	"PriorityState": "None",
+	"Concatstatuser": "New",
+	"ActionRequired": false,
+	"StillOpen": true,
+	"Icon": "",
+	"SoldToPartyName": "SAP SE",
+	"ServiceTeamName": "Support Team Germany",
+	"PersonRespName": "",
+	"ReporterName": "Max Mock",
+	"AddContactName": "",
+	"CategoryTxt": "Application",
+	"ConfigItemTxt": "System FA7 1231313 200",
+	"CreatedByName": "Max Mock",
+	"SAPComponent": "SV-SMG-SUP-TST",
+	"__metadata": {
+		"uri": "MessageResultSet(guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c510')",
+		"type": "AI_CRM_GW_MYMESSAGE_SRV.MessageResult"
+	},
+	"AttachmentSet": {
+		"__deferred": {
+			"uri": "MessageResultSet(guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c510')/AttachmentSet"
+		}
+	},
+	"StatusSet": {
+		"__deferred": {
+			"uri": "MessageResultSet(guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c510')/StatusSet"
+		}
+	},
+	"TextSet": {
+		"__deferred": {
+			"uri": "MessageResultSet(guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c510')/TextSet"
+		}
+	},
+	"CustomerHSet": {
+		"__deferred": {
+			"uri": "MessageResultSet(guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c510')/CustomerHSet"
+		}
+	}
+},
+
+{
+	"Guid": "dc7dd06b-7f09-4582-86b8-fb4ee0b2c511",
+	"ObjectId": "800004211",
+	"ProcessType": "SMIN",
+	"ProcessTypeTxt": "Incident",
+	"Description": "User Account not in validity date",
+	"IntroText": "Hi colleagues, when I try to logon I get the message that my user is not in validity date",
+	"CreatedAtDateFormatted": "21.12.15",
+	"ChangedAtDateFormatted": "24.12.15",
+	"PostingDate": "/Date(1470239098000)/",
+	"ChangedAtDate": "/Date(1490875848000)/",
+	"Priority": "3",
+	"PriorityTxt": "3: Medium",
+	"PriorityState": "None",
+	"Concatstatuser": "Customer Action",
+	"ActionRequired": true,
+	"StillOpen": true,
+	"Icon": "sap-icon://notification",
+	"SoldToPartyName": "SAP SE",
+	"ServiceTeamName": "Support Team Germany",
+	"PersonRespName": "Jack Support",
+	"ReporterName": "Max Mock",
+	"AddContactName": "",
+	"CategoryTxt": "Application",
+	"ConfigItemTxt": "System FA7 1231313 200",
+	"CreatedByName": "Max Mock",
+	"SAPComponent": "SV-SMG-SUP-TST",
+	"__metadata": {
+		"uri": "MessageResultSet(guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c511')",
+		"type": "AI_CRM_GW_MYMESSAGE_SRV.MessageResult"
+	},
+	"AttachmentSet": {
+		"__deferred": {
+			"uri": "MessageResultSet(guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c511')/AttachmentSet"
+		}
+	},
+	"StatusSet": {
+		"__deferred": {
+			"uri": "MessageResultSet(guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c511')/StatusSet"
+		}
+	},
+	"TextSet": {
+		"__deferred": {
+			"uri": "MessageResultSet(guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c510')/TextSet"
+		}
+	},
+	"CustomerHSet": {
+		"__deferred": {
+			"uri": "MessageResultSet(guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c510')/CustomerHSet"
+		}
+	}
+},
+
+{
+	"Guid": "1c7dd06b-7f09-4582-86b8-fb4ee0b2c5b7",
+	"ObjectId": "800000003",
+	"ProcessType": "SMIN",
+	"ProcessTypeTxt": "Incident",
+	"Description": "Iphone is broken",
+	"IntroText": "Hello, my Iphone is broken. I forgot the iPhone on  the street and the neighbours car ran over the phone...",
+	"CreatedAtDateFormatted": "01.08.16",
+	"ChangedAtDateFormatted": "03.08.16",
+	"PostingDate": "/Date(1470039098000)/",
+	"ChangedAtDate": "/Date(1470039298000)/",
+	"Priority": "3",
+	"PriorityTxt": "3: Medium",
+	"PriorityState": "None",
+	"Concatstatuser": "Closed",
+	"ActionRequired": false,
+	"StillOpen": false,
+	"Icon": "",
+	"SoldToPartyName": "SAP SE",
+	"ServiceTeamName": "Support Team Germany",
+	"PersonRespName": "Jim Support",
+	"ReporterName": "Max Mock",
+	"AddContactName": "",
+	"CategoryTxt": "Hardware",
+	"ConfigItemTxt": "iPhone 6 64GB ",
+	"CreatedByName": "Max Mock",
+	"SAPComponent": "SV-SMG",
+	"__metadata": {
+		"uri": "MessageResultSet(guid'1c7dd06b-7f09-4582-86b8-fb4ee0b2c5b7')",
+		"type": "AI_CRM_GW_MYMESSAGE_SRV.MessageResult"
+	},
+	"AttachmentSet": {
+		"__deferred": {
+			"uri": "MessageResultSet(guid'1c7dd06b-7f09-4582-86b8-fb4ee0b2c5b7')/AttachmentSet"
+		}
+	},
+	"StatusSet": {
+		"__deferred": {
+			"uri": "MessageResultSet(guid'1c7dd06b-7f09-4582-86b8-fb4ee0b2c5b7')/StatusSet"
+		}
+	},
+	"TextSet": {
+		"__deferred": {
+			"uri": "MessageResultSet(guid'1c7dd06b-7f09-4582-86b8-fb4ee0b2c5b7')/TextSet"
+		}
+	},
+	"CustomerHSet": {
+		"__deferred": {
+			"uri": "MessageResultSet(guid'1c7dd06b-7f09-4582-86b8-fb4ee0b2c5b7')/CustomerHSet"
+		}
+	}
+},
+
+{
+	"Guid": "dc7dd06b-7f09-4582-86b8-fb4ee0b2c512",
+	"ObjectId": "800004212",
+	"ProcessType": "SMIN",
+	"ProcessTypeTxt": "Incident",
+	"Description": "This Incident is locked in backend",
+	"IntroText": "Hi colleagues, this is a test for a locked Incident...",
+	"CreatedAtDateFormatted": "21.12.15",
+	"ChangedAtDateFormatted": "24.12.15",
+	"PostingDate": "/Date(1470139098000)/",
+	"ChangedAtDate": "/Date(1490874848000)/",
+	"Priority": "3",
+	"PriorityTxt": "3: Medium",
+	"PriorityState": "None",
+	"Concatstatuser": "Customer Action",
+	"ActionRequired": true,
+	"StillOpen": true,
+	"Icon": "sap-icon://notification",
+	"SoldToPartyName": "SAP SE",
+	"ServiceTeamName": "Support Team Germany",
+	"PersonRespName": "Jack Support",
+	"ReporterName": "Max Mock",
+	"AddContactName": "",
+	"CategoryTxt": "Application",
+	"ConfigItemTxt": "System FA7 1231313 200",
+	"CreatedByName": "Max Mock",
+	"SAPComponent": "SV-SMG-SUP-TST",
+	"__metadata": {
+		"uri": "MessageResultSet(guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c512')",
+		"type": "AI_CRM_GW_MYMESSAGE_SRV.MessageResult"
+	},
+	"AttachmentSet": {
+		"__deferred": {
+			"uri": "MessageResultSet(guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c512')/AttachmentSet"
+		}
+	},
+	"StatusSet": {
+		"__deferred": {
+			"uri": "MessageResultSet(guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c512')/StatusSet"
+		}
+	},
+	"TextSet": {
+		"__deferred": {
+			"uri": "MessageResultSet(guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c512')/TextSet"
+		}
+	},
+	"CustomerHSet": {
+		"__deferred": {
+			"uri": "MessageResultSet(guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c512')/CustomerHSet"
+		}
+	}
+}
+
+]

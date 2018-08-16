@@ -1,0 +1,276 @@
+<edmx:Edmx
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="AI_CRM_GW_MYMESSAGE_SRV" xml:lang="en" sap:schema-version="1">
+            <EntityType Name="Subscription" sap:semantics="subscriptions" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" Nullable="false" MaxLength="32" sap:label="Sub. ID" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="user" Type="Edm.String" MaxLength="12" m:FC_TargetPath="SyndicationAuthorName" m:FC_KeepInContent="false" sap:label="User Name" sap:creatable="false" sap:filterable="false"/>
+                <Property Name="updated" Type="Edm.DateTime" Precision="0" m:FC_TargetPath="SyndicationUpdated" m:FC_KeepInContent="false" sap:label="Time Stamp" sap:creatable="false" sap:filterable="false"/>
+                <Property Name="title" Type="Edm.String" MaxLength="255" m:FC_TargetPath="SyndicationTitle" m:FC_KeepInContent="false" sap:label="Title" sap:filterable="false"/>
+                <Property Name="deliveryAddress" Type="Edm.String" sap:label="Delivery Address" sap:filterable="false"/>
+                <Property Name="persistNotifications" Type="Edm.Boolean" sap:label="Persist Notification" sap:filterable="false"/>
+                <Property Name="collection" Type="Edm.String" MaxLength="40" sap:label="Collection" sap:filterable="false"/>
+                <Property Name="filter" Type="Edm.String" sap:label="Filter" sap:filterable="false"/>
+                <Property Name="select" Type="Edm.String" MaxLength="255" sap:label="Select" sap:filterable="false"/>
+                <Property Name="changeType" Type="Edm.String" MaxLength="30" sap:label="Change Type"/>
+            </EntityType>
+            <EntityType Name="Notification" sap:semantics="notifications" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" Nullable="false" MaxLength="32" sap:label="Notification ID"/>
+                <Property Name="collection" Type="Edm.String" MaxLength="40" sap:label="Collection"/>
+                <Property Name="title" Type="Edm.String" m:FC_TargetPath="SyndicationTitle" m:FC_KeepInContent="false" sap:label="Notif. Text"/>
+                <Property Name="updated" Type="Edm.DateTime" Precision="0" m:FC_TargetPath="SyndicationUpdated" m:FC_KeepInContent="false" sap:label="Time Stamp"/>
+                <Property Name="changeType" Type="Edm.String" MaxLength="30" sap:label="Change Type"/>
+                <Property Name="entriesOfInterest" Type="Edm.Int32" sap:label="No. of Entries"/>
+                <Property Name="recipient" Type="Edm.String" MaxLength="112" sap:label="Recipient" sap:creatable="false" sap:updatable="false"/>
+            </EntityType>
+            <EntityType Name="Attachment" m:HasStream="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="refGuid"/>
+                    <PropertyRef Name="loioId"/>
+                    <PropertyRef Name="phioId"/>
+                </Key>
+                <Property Name="refGuid" Type="Edm.Guid" Nullable="false" sap:label="Guid" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="loioId" Type="Edm.String" Nullable="false" MaxLength="32" sap:label="Object ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="phioId" Type="Edm.String" Nullable="false" MaxLength="32" sap:label="Object ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="documentId" Type="Edm.String" Nullable="false" MaxLength="132" sap:label="DOCUMENT_ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="fileName" Type="Edm.String" Nullable="false" MaxLength="255" sap:label="Component name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="fileSize" Type="Edm.String" Nullable="false" MaxLength="12" sap:label="Size/dim." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="mimeType" Type="Edm.String" Nullable="false" MaxLength="128" sap:label="MIME type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="language" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Language" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="uploadDateFormatted" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="Upload Date (formatted)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="uploadDate" Type="Edm.DateTime" Nullable="false" Precision="0" sap:label="Time Stamp" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="userName" Type="Edm.String" Nullable="false" MaxLength="12" sap:label="User Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="contributor" Type="Edm.String" Nullable="false" MaxLength="255" sap:label="User Name (full)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="document" Type="Edm.Binary" Nullable="false" sap:label="DOCUMENT" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="thumbnailUrl" Type="Edm.String" Nullable="false" MaxLength="4096" sap:label="Thumbnail Url" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="enableEdit" Type="Edm.Boolean" Nullable="false" sap:label="Enable Edit Switch" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="enableDelete" Type="Edm.Boolean" Nullable="false" sap:label="Enable Delete Switch" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="visibleDelete" Type="Edm.Boolean" Nullable="false" sap:label="Visible Delete Switch" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="visibleEdit" Type="Edm.Boolean" Nullable="false" sap:label="Visible Edit Switch" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="url" Type="Edm.String" Nullable="false" MaxLength="4096" sap:label="URL" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="MessageResultSet" Relationship="AI_CRM_GW_MYMESSAGE_SRV.MessageAttachment" FromRole="ToRole_MessageAttachment" ToRole="FromRole_MessageAttachment"/>
+            </EntityType>
+            <EntityType Name="Status" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Guid"/>
+                </Key>
+                <Property Name="Guid" Type="Edm.Guid" Nullable="false" sap:label="Object GUID"/>
+                <Property Name="EnableConfirm" Type="Edm.Boolean" sap:label="Confrim Flag"/>
+                <Property Name="EnableWithdraw" Type="Edm.Boolean" sap:label="Boolean Variable (X=True, -=False, Space=Unknown)"/>
+                <Property Name="EnableUpload" Type="Edm.Boolean" sap:label="Boolean"/>
+                <Property Name="SetWithdraw" Type="Edm.Boolean" sap:label="Boolean Variable (X=True, -=False, Space=Unknown)"/>
+                <Property Name="SetConfirm" Type="Edm.Boolean" sap:label="Confrim Flag"/>
+                <Property Name="VisibleWithdraw" Type="Edm.Boolean" sap:label="Visible Flag"/>
+                <Property Name="VisibleConfirm" Type="Edm.Boolean" sap:label="Visible Flag"/>
+                <Property Name="ButtonTypeWithdraw" Type="Edm.String" MaxLength="20" sap:label="Button Type (Withdraw)"/>
+                <Property Name="ButtonTypeConfirm" Type="Edm.String" MaxLength="20" sap:label="Button Type (Confirm)"/>
+                <Property Name="TextString" Type="Edm.String" sap:label="Text Lines"/>
+                <NavigationProperty Name="MessageResultSet" Relationship="AI_CRM_GW_MYMESSAGE_SRV.MessageStatus" FromRole="ToRole_MessageStatus" ToRole="FromRole_MessageStatus"/>
+            </EntityType>
+            <EntityType Name="Text" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="TdName"/>
+                    <PropertyRef Name="Tdobject"/>
+                    <PropertyRef Name="Tdid"/>
+                </Key>
+                <Property Name="DateTimeText" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="30 Characters" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="RefGuid" Type="Edm.Guid" Nullable="false" sap:label="Object GUID" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Tdspras" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Language" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TdName" Type="Edm.String" Nullable="false" MaxLength="70" sap:label="TDNAME" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Tdobject" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Text object" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Tdid" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Text ID" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TextString" Type="Edm.String" Nullable="false" sap:label="Text Lines" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TdidTxt" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Created by" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TdfuserText" Type="Edm.String" Nullable="false" MaxLength="255" sap:label="Created by" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Email" Type="Edm.String" Nullable="false" MaxLength="255" sap:label="E-Mail Address" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Emailsubject" Type="Edm.String" Nullable="false" MaxLength="255" sap:label="Char255" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Department" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Department" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Company" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CompanyAdress" Type="Edm.String" Nullable="false" MaxLength="255" sap:label="Char255" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Contactmobile" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Telephone no." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Contactphone" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Telephone no." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="MessageResultSet" Relationship="AI_CRM_GW_MYMESSAGE_SRV.MessageText" FromRole="ToRole_MessageText" ToRole="FromRole_MessageText"/>
+            </EntityType>
+            <EntityType Name="MessageResult" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Guid"/>
+                </Key>
+                <Property Name="Guid" Type="Edm.Guid" Nullable="false" sap:label="Object GUID" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="ObjectId" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="ID" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="ProcessType" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Transaction Type" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="ProcessTypeTxt" Type="Edm.String" MaxLength="60" sap:label="Transaction Type" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Description" Type="Edm.String" MaxLength="40" sap:label="Description" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="IntroText" Type="Edm.String" MaxLength="255" sap:label="Char255" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="CreatedAtDateFormatted" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="Character Field Length = 10" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="ChangedAtDateFormatted" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="Character Field Length = 10" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="PostingDate" Type="Edm.DateTime" Nullable="false" Precision="7" sap:label="Posting Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ChangedAtDate" Type="Edm.DateTime" Nullable="false" Precision="7" sap:label="Changed on" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Priority" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Priority" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PriorityTxt" Type="Edm.String" MaxLength="60" sap:label="Priority" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="PriorityState" Type="Edm.String" MaxLength="10" sap:label="Character Field Length = 10" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Concatstatuser" Type="Edm.String" MaxLength="30" sap:label="Status" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="ActionRequired" Type="Edm.Boolean" sap:label="Boolean Variable (X=True, -=False, Space=Unknown)" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="StillOpen" Type="Edm.Boolean" sap:label="Boolean Variable (X=True, -=False, Space=Unknown)" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Icon" Type="Edm.String" MaxLength="50" sap:label="c" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="SoldToPartyName" Type="Edm.String" MaxLength="50" sap:label="Description" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="ServiceTeamName" Type="Edm.String" MaxLength="50" sap:label="Description" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="PersonRespName" Type="Edm.String" MaxLength="50" sap:label="Description" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="ReporterName" Type="Edm.String" MaxLength="50" sap:label="Description" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="AddContactName" Type="Edm.String" MaxLength="50" sap:label="Description" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="CategoryTxt" Type="Edm.String" MaxLength="255" sap:label="Char255" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="ConfigItemTxt" Type="Edm.String" MaxLength="40" sap:label="Description" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="CreatedByName" Type="Edm.String" MaxLength="50" sap:label="Description" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="SAPComponent" Type="Edm.String" MaxLength="20" sap:label="SAP Component" sap:creatable="false" sap:updatable="false"/>
+                <NavigationProperty Name="AttachmentSet" Relationship="AI_CRM_GW_MYMESSAGE_SRV.MessageAttachment" FromRole="FromRole_MessageAttachment" ToRole="ToRole_MessageAttachment"/>
+                <NavigationProperty Name="StatusSet" Relationship="AI_CRM_GW_MYMESSAGE_SRV.MessageStatus" FromRole="FromRole_MessageStatus" ToRole="ToRole_MessageStatus"/>
+                <NavigationProperty Name="TextSet" Relationship="AI_CRM_GW_MYMESSAGE_SRV.MessageText" FromRole="FromRole_MessageText" ToRole="ToRole_MessageText"/>
+                <NavigationProperty Name="CustomerHSet" Relationship="AI_CRM_GW_MYMESSAGE_SRV.MessageCustomerH" FromRole="FromRole_MessageCustomerH" ToRole="ToRole_MessageCustomerH"/>
+            </EntityType>
+            <EntityType Name="Priority" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="PrioCode"/>
+                </Key>
+                <Property Name="PrioCode" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Priority" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Component" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="CompID"/>
+                </Key>
+                <Property Name="CompID" Type="Edm.String" Nullable="false" MaxLength="79" sap:label="Character 79" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CompListType" Type="Edm.String" Nullable="false" MaxLength="15" sap:label="Char15" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CompParentId" Type="Edm.String" Nullable="false" MaxLength="79" sap:label="Character 79" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CompSequence" Type="Edm.String" Nullable="false" MaxLength="5" sap:label="Sequence" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CompLevel" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="NUM" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CompSelectable" Type="Edm.Boolean" Nullable="false" sap:label="Indicator" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CompText" Type="Edm.String" Nullable="false" MaxLength="79" sap:label="Character 79" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="CustomerH" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Guid"/>
+                </Key>
+                <Property Name="Guid" Type="Edm.Guid" Nullable="false" sap:label="Object GUID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CustomerHDummy" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Dummy" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <ComplexType Name="DefaultPrio">
+                <Property Name="defaultPrio" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Priority" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </ComplexType>
+            <ComplexType Name="StatusComparison">
+                <Property Name="StatusTxt30" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="UserStatus" Type="Edm.String" Nullable="false" MaxLength="5" sap:label="User status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </ComplexType>
+            <ComplexType Name="MessageGuid">
+                <Property Name="Guid" Type="Edm.Guid" Nullable="false" sap:label="Object GUID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </ComplexType>
+            <ComplexType Name="BAPIRET">
+                <Property Name="Type" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Message type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="Message Class" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Number" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Message number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MessageV1" Type="Edm.String" Nullable="false" MaxLength="50" sap:label="Message Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MessageV2" Type="Edm.String" Nullable="false" MaxLength="50" sap:label="Message Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MessageV3" Type="Edm.String" Nullable="false" MaxLength="50" sap:label="Message Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MessageV4" Type="Edm.String" Nullable="false" MaxLength="50" sap:label="Message Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </ComplexType>
+            <Association Name="MessageStatus" sap:content-version="1">
+                <End Type="AI_CRM_GW_MYMESSAGE_SRV.MessageResult" Multiplicity="1" Role="FromRole_MessageStatus"/>
+                <End Type="AI_CRM_GW_MYMESSAGE_SRV.Status" Multiplicity="1" Role="ToRole_MessageStatus"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_MessageStatus">
+                        <PropertyRef Name="Guid"/>
+                    </Principal>
+                    <Dependent Role="ToRole_MessageStatus">
+                        <PropertyRef Name="Guid"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="MessageText" sap:content-version="1">
+                <End Type="AI_CRM_GW_MYMESSAGE_SRV.MessageResult" Multiplicity="*" Role="FromRole_MessageText"/>
+                <End Type="AI_CRM_GW_MYMESSAGE_SRV.Text" Multiplicity="*" Role="ToRole_MessageText"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_MessageText">
+                        <PropertyRef Name="Guid"/>
+                    </Principal>
+                    <Dependent Role="ToRole_MessageText">
+                        <PropertyRef Name="RefGuid"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="MessageCustomerH" sap:content-version="1">
+                <End Type="AI_CRM_GW_MYMESSAGE_SRV.MessageResult" Multiplicity="*" Role="FromRole_MessageCustomerH"/>
+                <End Type="AI_CRM_GW_MYMESSAGE_SRV.CustomerH" Multiplicity="*" Role="ToRole_MessageCustomerH"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_MessageCustomerH">
+                        <PropertyRef Name="Guid"/>
+                    </Principal>
+                    <Dependent Role="ToRole_MessageCustomerH">
+                        <PropertyRef Name="Guid"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="MessageAttachment" sap:content-version="1">
+                <End Type="AI_CRM_GW_MYMESSAGE_SRV.MessageResult" Multiplicity="*" Role="FromRole_MessageAttachment"/>
+                <End Type="AI_CRM_GW_MYMESSAGE_SRV.Attachment" Multiplicity="*" Role="ToRole_MessageAttachment"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_MessageAttachment">
+                        <PropertyRef Name="Guid"/>
+                    </Principal>
+                    <Dependent Role="ToRole_MessageAttachment">
+                        <PropertyRef Name="refGuid"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="AI_CRM_GW_MYMESSAGE_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="SubscriptionCollection" EntityType="AI_CRM_GW_MYMESSAGE_SRV.Subscription" sap:content-version="1"/>
+                <EntitySet Name="NotificationCollection" EntityType="AI_CRM_GW_MYMESSAGE_SRV.Notification" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="AttachmentSet" EntityType="AI_CRM_GW_MYMESSAGE_SRV.Attachment" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="StatusSet" EntityType="AI_CRM_GW_MYMESSAGE_SRV.Status" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="TextSet" EntityType="AI_CRM_GW_MYMESSAGE_SRV.Text" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="MessageResultSet" EntityType="AI_CRM_GW_MYMESSAGE_SRV.MessageResult" sap:creatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="PrioritySet" EntityType="AI_CRM_GW_MYMESSAGE_SRV.Priority" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="ComponentSet" EntityType="AI_CRM_GW_MYMESSAGE_SRV.Component" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="CustomerHSet" EntityType="AI_CRM_GW_MYMESSAGE_SRV.CustomerH" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <AssociationSet Name="MessageStatusSet" Association="AI_CRM_GW_MYMESSAGE_SRV.MessageStatus" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="MessageResultSet" Role="FromRole_MessageStatus"/>
+                    <End EntitySet="StatusSet" Role="ToRole_MessageStatus"/>
+                </AssociationSet>
+                <AssociationSet Name="MessageCustomerHSet" Association="AI_CRM_GW_MYMESSAGE_SRV.MessageCustomerH" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="MessageResultSet" Role="FromRole_MessageCustomerH"/>
+                    <End EntitySet="CustomerHSet" Role="ToRole_MessageCustomerH"/>
+                </AssociationSet>
+                <AssociationSet Name="MessageTextSet" Association="AI_CRM_GW_MYMESSAGE_SRV.MessageText" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="MessageResultSet" Role="FromRole_MessageText"/>
+                    <End EntitySet="TextSet" Role="ToRole_MessageText"/>
+                </AssociationSet>
+                <AssociationSet Name="MessageAttachmentSet" Association="AI_CRM_GW_MYMESSAGE_SRV.MessageAttachment" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="MessageResultSet" Role="FromRole_MessageAttachment"/>
+                    <End EntitySet="AttachmentSet" Role="ToRole_MessageAttachment"/>
+                </AssociationSet>
+                <FunctionImport Name="getDefaultPriority" ReturnType="AI_CRM_GW_MYMESSAGE_SRV.DefaultPrio" m:HttpMethod="GET"/>
+                <FunctionImport Name="withdrawIncident" ReturnType="AI_CRM_GW_MYMESSAGE_SRV.BAPIRET" m:HttpMethod="GET">
+                    <Parameter Name="Guid" Type="Edm.Guid" Mode="In"/>
+                    <Parameter Name="Comments" Type="Edm.String" Mode="In"/>
+                </FunctionImport>
+                <FunctionImport Name="confirmIncident" ReturnType="AI_CRM_GW_MYMESSAGE_SRV.BAPIRET" m:HttpMethod="GET">
+                    <Parameter Name="Guid" Type="Edm.Guid" Mode="In"/>
+                    <Parameter Name="Comments" Type="Edm.String" Mode="In"/>
+                </FunctionImport>
+                <FunctionImport Name="getGuidByObjectID" ReturnType="AI_CRM_GW_MYMESSAGE_SRV.MessageGuid" m:HttpMethod="GET">
+                    <Parameter Name="ObjectID" Type="Edm.String" Mode="In"/>
+                </FunctionImport>
+            </EntityContainer>
+            <atom:link
+                xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/AI_CRM_GW_MYMESSAGE_SRV/$metadata"/>
+                <atom:link
+                    xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/AI_CRM_GW_MYMESSAGE_SRV/$metadata"/>
+                </Schema>
+            </edmx:DataServices>
+        </edmx:Edmx>

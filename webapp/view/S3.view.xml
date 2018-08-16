@@ -1,0 +1,102 @@
+<mvc:View controllerName="zwx.sm.itsm.myincidents.view.S3" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic"
+	xmlns:footerbar="sap.ushell.ui.footerbar" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:rt="sap.ui.richtexteditor">
+	<semantic:DetailPage id="page" navButtonPress="onNavBack" showNavButton="{device>/system/phone}" title="{i18n>DETAIL_TITLE}"
+		busy="{detailView>/busy}" busyIndicatorDelay="{detailView>/delay}">
+		<semantic:content>
+			<ObjectHeader backgroundDesign="Translucent" fullScreenOptimized="false" icon="{Icon}" id="oh1" intro="{IntroText}" responsive="true"
+				title="{Description}">
+				<statuses>
+					<!--<ObjectStatus text="{Concatstatuser}"/>-->
+					<ObjectStatus id="prioStatus" state="{PriorityState}" text="{PriorityTxt}"/>
+					<ObjectStatus id="messageProcessorStatus" text="{PersonRespName}"/>
+				</statuses>
+				<attributes>
+					<ObjectAttribute id="userStatusAttribute" text="{Concatstatuser}"/>
+				</attributes>
+				<headerContainer>
+					<IconTabBar expanded="{device>/isNoPhone}">
+						<items>
+							<IconTabFilter icon="sap-icon://discussion" id="notesFilter" text="{i18n>ICON_TAB_CONVERSATION}">
+						 
+								<rt:RichTextEditor id="richTextEditor" height="400px" width="100%" editable="true" visible="false"
+									editorType="TinyMCE4" ></rt:RichTextEditor>
+								<FlexBox direction="RowReverse" allignItems="Start">
+									<items>
+										<Button id="submitTextBtn" text="{i18n>BUTTON_SUBMIT}" press="onPost"></Button>
+									</items>
+								</FlexBox>
+								<FeedInput id='feedInput' post="onPost" showIcon="true" visible="false"/>
+								<List id="notesList" showSeparators="Inner" busyIndicatorDelay="0" items="{/TextSet}">
+									<!-- FeedListItem Binding done in s3.Controller -->
+									<FeedListItem sender="{TdfuserText}" senderPress="onPressSender" senderActive="true" iconDensityAware="false"
+										icon="{path: 'Email',formatter: '.formatter.getPicture'}" info="{TdidTxt}" timestamp="{DateTimeText}" text="{TextString}"
+										app:department="{Department}" app:company="{Company}" app:companyaddress="{CompanyAddress}" app:contactmobile="{Contactmobile}"
+										app:contactphone="{Contactphone}" app:email="{Email}" app:emailsubject="{Emailsubject}"/>
+								</List>
+							</IconTabFilter>
+							<IconTabFilter icon="sap-icon://attachment" id="attachmentFilter" text="{i18n>ICON_TAB_ATTACHMENTS}">
+								<UploadCollection noDataText="{i18n>ATTACHMENT_NO_DATA_TEXT}" change="onChange" fileDeleted="onDeleteFile" fileRenamed="onFileRenamed"
+									id="fileupload" multiple="false" uploadComplete="onUploadComplete" busyIndicatorDelay="0" items="{/AttachmentSet}">
+									<items>
+										<UploadCollectionItem documentId="{documentId}" mimeType="{mimeType}" fileName="{fileName}" enableDelete="{enableDelete}"
+											enableEdit="{enableEdit}" visibleEdit="{visibleEdit}" visibleDelete="{visibleDelete}" url="{url}">
+											<attributes>
+												<ObjectAttribute title="{i18n>UPLOADED_BY}" text="{contributor}"/>
+												<ObjectAttribute title="{i18n>UPLOADED_ON}" text="{path: 'uploadDate',formatter: '.util.dateTime'}"/>
+												<ObjectAttribute title="{i18n>FILE_SIZE}" text="{path: 'fileSize',formatter: '.util.formatFileSizeAttribute'}"/>
+											</attributes>
+										</UploadCollectionItem>
+									</items>
+								</UploadCollection>
+								<!-- UploadCollectionItem Binding done in s3.Controller -->
+							</IconTabFilter>
+							<IconTabFilter icon="sap-icon://hint" id="infoFilter" text="{i18n>ICON_TAB_DETAILS}">
+								<!--Extension Point for Icon Tab "Details" tab content -->
+								<core:ExtensionPoint name="extFormOnDetailsTab">
+									<form:SimpleForm id="detailForm" columnsL="1" columnsM="1" editable="false" emptySpanL="1" emptySpanM="1" labelSpanL="4" labelSpanM="4"
+										layout="ResponsiveGridLayout" maxContainerCols="2" minWidth="1024" title="{i18n>TITLE_DETAILS}" busyIndicatorDelay="0">
+										<Label id="incidentNumberLabel" text="{i18n>INICIDENT_NUMBER}"/>
+										<Text id="incidentNumberForm" text="{ObjectId}"/>
+										<Label id="createdByLabel" text="{i18n>CREATED_BY}"/>
+										<Text id="createdByNameForm" text="{CreatedByName}"/>
+										<Label id="createdAtLabel" text="{i18n>CREATED_ON}"/>
+										<Text id="createdAtForm" text="{CreatedAtDateFormatted}"/>
+										<Label id="changedAtLabel" text="{i18n>LAST_CHANGE}"/>
+										<Text id="changedAtForm" text="{ChangedAtDateFormatted}"/>
+										<Label id="priorityLabel" text="{i18n>PRIORITY}"/>
+										<ObjectStatus id="priorityForm" state="{PriorityState}" text="{PriorityTxt}"/>
+										<Label id="categoryLabel" text="{i18n>CATEGORY}"/>
+										<Text id="categoryForm" text="{CategoryTxt}"/>
+										<Label id="componentLabel" text="{i18n>COMPONENT}"/>
+										<Text id="componentForm" text="{SAPComponent}"/>
+										<Label id="configItemLabel" text="{i18n>CONFIG_ITEM}"/>
+										<Text id="configItemForm" text="{ConfigItemTxt}"/>
+										<Label id="addContactLabel" text="{i18n>ADD_CONTACT}"/>
+										<Text id="addContactForm" text="{AddContactName}"/>
+									</form:SimpleForm>
+								</core:ExtensionPoint >
+							</IconTabFilter>
+						</items>
+					</IconTabBar>
+				</headerContainer>
+			</ObjectHeader>
+			<!--Extension Point for Elements after Object Header-->
+			<core:ExtensionPoint name="extensionAfterObjectHeader"/>
+		</semantic:content>
+		<semantic:customFooterContent>
+			<!-- Additional Button Binding done in s3.Controller -->
+			<Button id="withdrawButton" press="onWithdraw" tooltip="{i18n>BUTTON_WITHDRAW}"/>
+			<Button id="confirmButton" press="onConfirm" tooltip="{i18n>BUTTON_CONFIRM}"/>
+		</semantic:customFooterContent>
+		<semantic:sendEmailAction>
+			<semantic:SendEmailAction id="shareEmail" press="onShareEmailPress"/>
+		</semantic:sendEmailAction>
+		<semantic:shareInJamAction>
+			<semantic:ShareInJamAction id="shareInJam" visible="{FLP>/isShareInJamActive}" press="onShareInJamPress"/>
+		</semantic:shareInJamAction>
+		<semantic:saveAsTileAction>
+			<footerbar:AddBookmarkButton id="shareTile" title="{detailView>/saveAsTileTitle}"/>
+		</semantic:saveAsTileAction>
+	</semantic:DetailPage>
+</mvc:View>

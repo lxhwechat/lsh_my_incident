@@ -1,0 +1,43 @@
+[
+	{
+		"CompID": "CRM",
+	"CompListType": "Navigation",
+	"CompParentId": "",
+	"CompSequence": "00000",
+	"CompLevel": "01",
+	"CompSelectable": false,
+	"CompText": "Customer Relationship Management",
+	"__metadata": {
+		"uri": "ComponentSet('CRM')",
+		"type": "AI_CRM_GW_MYMESSAGE_SRV.Component"
+	}
+
+},
+	
+	{
+	"CompID": "SV",
+	"CompListType": "Navigation",
+	"CompParentId": "",
+	"CompSequence": "00000",
+	"CompLevel": "01",
+	"CompSelectable": false,
+	"CompText": "Service",
+	"__metadata": {
+		"uri": "ComponentSet('SV')",
+		"type": "AI_CRM_GW_MYMESSAGE_SRV.Component"
+	}
+	},
+	{
+	"CompID": "SV-SMG",
+	"CompListType": "Navigation",
+	"CompParentId": "SV",
+	"CompSequence": "00000",
+	"CompLevel": "02",
+	"CompSelectable": true,
+	"CompText": "Test Service Component",
+	"__metadata": {
+		"uri": "ComponentSet('SV-SMG')",
+		"type": "AI_CRM_GW_MYMESSAGE_SRV.Component"
+	}
+
+}]

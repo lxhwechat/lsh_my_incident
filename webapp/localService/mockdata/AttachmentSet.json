@@ -1,0 +1,127 @@
+[{
+	"refGuid": "dc7dd06b-7f09-4582-86b8-fb4ee0b2c5b7",
+	"loioId": "loioId1",
+	"phioId": "phioId1",
+	"documentId": "refGuid=guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c5b7',loioId='loioId1',phioId='phioId1'",
+	"fileName": "Problem_Desription.docx",
+	"fileSize": "000000101276",
+	"mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+	"language": "E",
+	"uploadDateFormatted": "uploadDateFormatted 1",
+	"uploadDate": "/Date(1444035581000)/",
+	"userName": "JACK",
+	"contributor": "Max Mock",
+	"document": "01110011010100111111111010011111",
+	"thumbnailUrl": "thumbnailUrl 1",
+	"enableEdit": false,
+	"enableDelete": true,
+	"visibleDelete": true,
+	"visibleEdit": false,
+	"url": "url 1",
+	"__metadata": {
+		"uri": "AttachmentSet(refGuid=guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c5b7',loioId='loioId1',phioId='phioId1')",
+		"type": "AI_CRM_GW_MYMESSAGE_SRV.Attachment"
+	},
+	"MessageResultSet": {
+		"__deferred": {
+			"uri": "AttachmentSet(refGuid=guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c5b7',loioId='loioId1',phioId='phioId1')/MessageResultSet"
+		}
+	}
+
+},
+
+{
+	"refGuid": "dc7dd06b-7f09-4582-86b8-fb4ee0b2c5b7",
+	"loioId": "loioId2",
+	"phioId": "phioId2",
+	"documentId": "refGuid=guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c5b7',loioId='loioId2',phioId='phioId2'",
+	"fileName": "Screenshot.jpg",
+	"fileSize": "000000192276",
+	"mimeType": "image/jpeg",
+	"language": "E",
+	"uploadDateFormatted": "uploadDateFormatted 1",
+	"uploadDate": "/Date(1487945581000)/",
+	"userName": "JACK",
+	"contributor": "Max Mock",
+	"document": "01110011010100111111111010011111",
+	"thumbnailUrl": "thumbnailUrl 1",
+	"enableEdit": false,
+	"enableDelete": true,
+	"visibleDelete": true,
+	"visibleEdit": false,
+	"url": "url 1",
+	"__metadata": {
+		"uri": "AttachmentSet(refGuid=guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c5b7',loioId='loioId2',phioId='phioId2')",
+		"type": "AI_CRM_GW_MYMESSAGE_SRV.Attachment"
+	},
+	"MessageResultSet": {
+		"__deferred": {
+			"uri": "AttachmentSet(refGuid=guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c5b7',loioId='loioId2',phioId='phioId2')/MessageResultSet"
+		}
+	}
+
+},
+
+{
+	"refGuid": "dc7dd06b-7f09-4582-86b8-fb4ee0b2c5b8",
+	"loioId": "loioId3",
+	"phioId": "phioId3",
+	"documentId": "refGuid=guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c5b8',loioId='loioId3',phioId='phioId3'",
+	"fileName": "Image.jpg",
+	"fileSize": "000001692276",
+	"mimeType": "image/jpeg",
+	"language": "E",
+	"uploadDateFormatted": "uploadDateFormatted 1",
+	"uploadDate": "/Date(1487955581000)/",
+	"userName": "JACK",
+	"contributor": "Max Mock",
+	"document": "01110011010100111111111010011111",
+	"thumbnailUrl": "thumbnailUrl 1",
+	"enableEdit": false,
+	"enableDelete": true,
+	"visibleDelete": true,
+	"visibleEdit": false,
+	"url": "url 1",
+	"__metadata": {
+		"uri": "AttachmentSet(refGuid=guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c5b8',loioId='loioId3',phioId='phioId3')",
+		"type": "AI_CRM_GW_MYMESSAGE_SRV.Attachment"
+	},
+	"MessageResultSet": {
+		"__deferred": {
+			"uri": "AttachmentSet(refGuid=guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c5b8',loioId='loioId3',phioId='phioId3')/MessageResultSet"
+		}
+	}
+
+},
+
+{
+	"refGuid": "dc7dd06b-7f09-4582-86b8-fb4ee0b2c5b9",
+	"loioId": "loioId4",
+	"phioId": "phioId4",
+	"documentId": "refGuid=guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c5b9',loioId='loioId4',phioId='phioId4'",
+	"fileName": "ImagePrinter.jpg",
+	"fileSize": "000001999999",
+	"mimeType": "image/jpeg",
+	"language": "E",
+	"uploadDateFormatted": "uploadDateFormatted 2",
+	"uploadDate": "/Date(1521116137000)/",
+	"userName": "JACK",
+	"contributor": "John Doe",
+	"document": "01110011010100111111111010011111",
+	"thumbnailUrl": "thumbnailUrl 1",
+	"enableEdit": false,
+	"enableDelete": true,
+	"visibleDelete": true,
+	"visibleEdit": false,
+	"url": "url 1",
+	"__metadata": {
+		"uri": "AttachmentSet(refGuid=guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c5b9',loioId='loioId4',phioId='phioId4')",
+		"type": "AI_CRM_GW_MYMESSAGE_SRV.Attachment"
+	},
+	"MessageResultSet": {
+		"__deferred": {
+			"uri": "AttachmentSet(refGuid=guid'dc7dd06b-7f09-4582-86b8-fb4ee0b2c5b9',loioId='loioId4',phioId='phioId4')/MessageResultSet"
+		}
+	}
+
+}]

@@ -1,0 +1,56 @@
+[{
+	"Guid": "1c7dd06b-7f09-4582-86b8-fb4ee0b2c5b7",
+	"ObjectId": "800000003",
+	"ProcessType": "SMIN",
+	"ProcessTypeTxt": "Incident",
+	"Description": "Iphone is broken",
+	"IntroText": "Hello, my Iphone is broken. I forgot the iPhone on  the street and the neighbours car ran over the phone...",
+	"CreatedAtDateFormatted": "01.08.16",
+	"ChangedAtDateFormatted": "03.08.16",
+	"PostingDate": "/Date(1145517356000)/",
+	"ChangedAtDate": "/Date(1145517356000)/",
+	"Priority": "3",
+	"PriorityTxt": "3: Medium",
+	"PriorityState": "None",
+	"Concatstatuser": "Completed",
+	"ActionRequired": false,
+	"StillOpen": false,
+	"Icon": "",
+	"SoldToPartyName": "SAP SE",
+	"ServiceTeamName": "Support Team Germany",
+	"PersonRespName": "Jim Support",
+	"ReporterName": "Max Mock",
+	"AddContactName": "",
+	"CategoryTxt": "Hardware",
+	"ConfigItemTxt": "iPhone 6 64GB ",
+	"CreatedByName": "Max Mock",
+	"SAPComponent": "SV-SMG",
+	"__metadata": {
+		"uri": "MessageResultSet(guid'1c7dd06b-7f09-4582-86b8-fb4ee0b2c5b7')",
+		"type": "AI_CRM_GW_MYMESSAGE_SRV.MessageResult"
+	},
+	"AttachmentSet": {
+		"__deferred": {
+			"uri": "MessageResultSet(guid'1c7dd06b-7f09-4582-86b8-fb4ee0b2c5b7')/AttachmentSet"
+		}
+	},
+	"StatusSet": {
+		"__deferred": {
+			"uri": "MessageResultSet(guid'1c7dd06b-7f09-4582-86b8-fb4ee0b2c5b7')/StatusSet"
+		}
+	},
+	"TextSet": {
+		"__deferred": {
+			"uri": "MessageResultSet(guid'1c7dd06b-7f09-4582-86b8-fb4ee0b2c5b7')/TextSet"
+		}
+	},
+	"CustomerHSet": {
+		"__deferred": {
+			"uri": "MessageResultSet(guid'1c7dd06b-7f09-4582-86b8-fb4ee0b2c5b7')/CustomerHSet"
+		}
+	}
+}
+
+
+
+]

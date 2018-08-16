@@ -1,0 +1,164 @@
+{
+	"_version": "1.4.0",
+	"sap.app": {
+		"id": "zwx.sm.itsm.myincidents",
+		"type": "application",
+		"resources": "resources.json",
+		"i18n": "i18n/i18n.properties",
+		"title": "{{SHELL_TITLE}}",
+		"description": "My Incidents",
+		"applicationVersion": {
+			"version": "${project.version}"
+		},
+		"ach": "SV-SMG-SUP",
+		"dataSources": {
+			"mainService": {
+				"uri": "/sap/opu/odata/sap/AI_CRM_GW_MYMESSAGE_SRV/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			},
+			"pictureService": {
+				"uri": "/sap/bc/ui2/smi/rest_tunnel/Jam/api/v1/OData/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/metadata_smi.xml"
+				}
+			},
+			"messageService": {
+				"uri": "/sap/opu/odata/UI2/INTEROP/Messages",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/metadata_interop.xml"
+				}
+			}
+		},
+		"sourceTemplate": {
+			"id": "sap.ui.ui5-template-plugin.2masterdetail",
+			"version": "1.38.13"
+		}
+	},
+	"sap.fiori": {
+		"registrationIds": ["F1353"],
+		"archeType": "transactional"
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "sap-icon://detail-view",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": ["sap_hcb", "sap_bluecrystal"]
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "zwx.sm.itsm.myincidents.view.App",
+			"type": "XML",
+			"id": "app"
+		},
+		"dependencies": {
+			"minUI5Version": "${sap.ui5.dist.version}",
+			"libs": {
+				"sap.ui.core": {
+					"minVersion": "1.38.0"
+				},
+				"sap.m": {
+					"minVersion": "1.38.0"
+				},
+				"sap.ushell": {
+					"minVersion": "1.38.0"
+				},
+				"sap.collaboration": {
+					"minVersion": "1.38",
+					"lazy": true
+				},
+				"sap.ui.layout": {
+					"minVersion": "1.38.0"
+				},
+				"sap.ui.richtexteditor" : {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "zwx.sm.itsm.myincidents.i18n.i18n"
+				}
+			},
+			"": {
+				"dataSource": "mainService",
+				"preload": true
+			}
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "zwx.sm.itsm.myincidents.view",
+				"controlId": "idAppControl",
+				"controlAggregation": "detailPages",
+				"bypassed": {
+					"target": ["master", "notFound"]
+				},
+				"async": true
+			},
+			"routes": [{
+				"pattern": "",
+				"name": "master",
+				"target": ["object", "master"]
+			}, {
+				"pattern": "MessageResultSet/{objectId}",
+				"name": "object",
+				"target": ["master", "object"]
+			}, {
+				"pattern": "toCreate",
+				"name": "toCreate",
+				"target": ["master", "create"]
+			}],
+			"targets": {
+				"master": {
+					"viewName": "S2",
+					"viewLevel": 1,
+					"viewId": "master",
+					"controlAggregation": "masterPages"
+				},
+				"object": {
+					"viewName": "S3",
+					"viewId": "detail",
+					"viewLevel": 2
+				},
+				"detailObjectNotFound": {
+					"viewName": "DetailObjectNotFound",
+					"viewId": "detailObjectNotFound"
+				},
+				"detailNoObjectsAvailable": {
+					"viewName": "DetailNoObjectsAvailable",
+					"viewId": "detailNoObjectsAvailable"
+				},
+				"notFound": {
+					"viewName": "NotFound",
+					"viewId": "notFound"
+				},
+				"create": {
+					"viewName": "Create",
+					"viewId": "create"
+				}
+			}
+		}
+	}
+}

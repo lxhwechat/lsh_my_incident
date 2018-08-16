@@ -1,0 +1,175 @@
+[ {
+	"DateTimeText": "09.06.2016 11:20:19",
+	"RefGuid": "dc7dd06b-7f09-4582-86b8-fb4ee0b2c5b7",
+	"Tdspras": "E",
+	"TdName": "dc7dd06b-7f09-4582-86b8-fb4ee0b2c5b7",
+	"Tdobject": "CRM_ORDERH",
+	"Tdid": "SU01",
+	"TextString": "Hello Max, please shutdown and clean your Laptop. Then reboot again.",
+	"TdidTxt": "Reply",
+	"TdfuserText": "Jim Support",
+	"Email": "Jim.Support@sap.com",
+	"Emailsubject": "Emailsubject 1",
+	"Department": "Support",
+	"Company": "SAP SE",
+	"CompanyAdress": "SAP Allee 13",
+	"Contactmobile": "+49 1231313 1212",
+	"Contactphone": "+49 12213 1212",
+	"__metadata": {
+		"uri": "TextSet(TdName='TdName%201',Tdobject='Tdobject%201',Tdid='Tdid%201')",
+		"type": "AI_CRM_GW_MYMESSAGE_SRV.Text"
+	},
+	"MessageResultSet": {
+		"__deferred": {
+			"uri": "TextSet(TdName='TdName%201',Tdobject='Tdobject%201',Tdid='Tdid%201')/MessageResultSet"
+		}
+	}
+}, {
+	"DateTimeText": "09.06.2016 11:24:16",
+	"RefGuid": "dc7dd06b-7f09-4582-86b8-fb4ee0b2c5b7",
+	"Tdspras": "E",
+	"TdName": "dc7dd06b-7f09-4582-86b8-fb4ee0b2c5b7",
+	"Tdobject": "CRM_ORDERH",
+	"Tdid": "SU99",
+	"TextString": "Hello, I have a big Issue with my Laptop. It is not working and it smells bad..",
+	"TdidTxt": "Description",
+	"TdfuserText": "Max Mock",
+	"Email": "max.mock@sap.com",
+	"Emailsubject": "Emailsubject 2",
+	"Department": "Abteilung Mock Data",
+	"Company": "SAP SE",
+	"CompanyAdress": "SAP Allee 12",
+	"Contactmobile": "+49 1234 12341",
+	"Contactphone": "+49 7222 12312",
+	"__metadata": {
+		"uri": "TextSet(TdName='TdName%202',Tdobject='Tdobject%202',Tdid='Tdid%202')",
+		"type": "AI_CRM_GW_MYMESSAGE_SRV.Text"
+	},
+	"MessageResultSet": {
+		"__deferred": {
+			"uri": "TextSet(TdName='TdName%202',Tdobject='Tdobject%202',Tdid='Tdid%202')/MessageResultSet"
+		}
+	}
+}, {
+	"DateTimeText": "12.06.2016 15:11:45",
+	"RefGuid": "dc7dd06b-7f09-4582-86b8-fb4ee0b2c5b8",
+	"Tdspras": "E",
+	"TdName": "dc7dd06b-7f09-4582-86b8-fb4ee0b2c5b8",
+	"Tdobject": "CRM_ORDERH",
+	"Tdid": "SU99",
+	"TextString": "Hello, the system FA7 is currently not available. When i try to logon I get an error message.",
+	"TdidTxt": "Description",
+	"TdfuserText": "Max Mock",
+	"Email": "max.mock@sap.com",
+	"Emailsubject": "Emailsubject 2",
+	"Department": "Abteilung Mock Data",
+	"Company": "SAP SE",
+	"CompanyAdress": "SAP Allee 12",
+	"Contactmobile": "+49 1234 12341",
+	"Contactphone": "+49 7222 12312",
+	"__metadata": {
+		"uri": "TextSet(TdName='TdName%202',Tdobject='Tdobject%202',Tdid='Tdid%202')",
+		"type": "AI_CRM_GW_MYMESSAGE_SRV.Text"
+	},
+	"MessageResultSet": {
+		"__deferred": {
+			"uri": "TextSet(TdName='TdName%202',Tdobject='Tdobject%202',Tdid='Tdid%202')/MessageResultSet"
+		}
+	}
+
+
+
+
+}, 
+{
+	"DateTimeText": "12.06.2016 15:11:45",
+	"RefGuid": "dc7dd06b-7f09-4582-86b8-fb4ee0b2c5b9",
+	"Tdspras": "E",
+	"TdName": "dc7dd06b-7f09-4582-86b8-fb4ee0b2c5b9",
+	"Tdobject": "CRM_ORDERH",
+	"Tdid": "SU99",
+	"TextString": "Hello, the printer HP Laserjet 762 on my Floor is broken. It won't print. If you turn it on it immediately shuts itself down. Please help I desperately need to print some stuff!",
+	"TdidTxt": "Description",
+	"TdfuserText": "Max Mock",
+	"Email": "max.mock@sap.com",
+	"Emailsubject": "Emailsubject 2",
+	"Department": "Abteilung Mock Data",
+	"Company": "SAP SE",
+	"CompanyAdress": "SAP Allee 12",
+	"Contactmobile": "+49 1234 12341",
+	"Contactphone": "+49 7222 12312",
+	"__metadata": {
+		"uri": "TextSet(TdName='TdName%202',Tdobject='Tdobject%202',Tdid='Tdid%202')",
+		"type": "AI_CRM_GW_MYMESSAGE_SRV.Text"
+	},
+	"MessageResultSet": {
+		"__deferred": {
+			"uri": "TextSet(TdName='TdName%202',Tdobject='Tdobject%202',Tdid='Tdid%202')/MessageResultSet"
+		}
+	}
+
+
+
+
+},
+{
+	"DateTimeText": "13.06.2016 11:20:19",
+	"RefGuid": "dc7dd06b-7f09-4582-86b8-fb4ee0b2c511",
+	"Tdspras": "E",
+	"TdName": "dc7dd06b-7f09-4582-86b8-fb4ee0b2c511",
+	"Tdobject": "CRM_ORDERH",
+	"Tdid": "SU01",
+	"TextString": "Hello Max, please specify your User Name. Which system did you try to logon ?",
+	"TdidTxt": "Reply",
+	"TdfuserText": "Jim Support",
+	"Email": "Jim.Support@sap.com",
+	"Emailsubject": "Emailsubject 1",
+	"Department": "Support",
+	"Company": "SAP SE",
+	"CompanyAdress": "SAP Allee 13",
+	"Contactmobile": "+49 1231313 1212",
+	"Contactphone": "+49 12213 1212",
+	"__metadata": {
+		"uri": "TextSet(TdName='TdName%201',Tdobject='Tdobject%201',Tdid='Tdid%201')",
+		"type": "AI_CRM_GW_MYMESSAGE_SRV.Text"
+	},
+	"MessageResultSet": {
+		"__deferred": {
+			"uri": "TextSet(TdName='TdName%201',Tdobject='Tdobject%201',Tdid='Tdid%201')/MessageResultSet"
+		}
+	}
+},
+{
+	"DateTimeText": "12.06.2016 15:11:45",
+	"RefGuid": "dc7dd06b-7f09-4582-86b8-fb4ee0b2c511",
+	"Tdspras": "E",
+	"TdName": "dc7dd06b-7f09-4582-86b8-fb4ee0b2c511",
+	"Tdobject": "CRM_ORDERH",
+	"Tdid": "SU99",
+	"TextString": "Hi colleagues, when I try to logon I get the message that my user is not in validity date.",
+	"TdidTxt": "Description",
+	"TdfuserText": "Max Mock",
+	"Email": "max.mock@sap.com",
+	"Emailsubject": "Emailsubject 2",
+	"Department": "Abteilung Mock Data",
+	"Company": "SAP SE",
+	"CompanyAdress": "SAP Allee 12",
+	"Contactmobile": "+49 1234 12341",
+	"Contactphone": "+49 7222 12312",
+	"__metadata": {
+		"uri": "TextSet(TdName='TdName%202',Tdobject='Tdobject%202',Tdid='Tdid%202')",
+		"type": "AI_CRM_GW_MYMESSAGE_SRV.Text"
+	},
+	"MessageResultSet": {
+		"__deferred": {
+			"uri": "TextSet(TdName='TdName%202',Tdobject='Tdobject%202',Tdid='Tdid%202')/MessageResultSet"
+		}
+	}
+
+
+
+
+}
+
+
+]

@@ -1,0 +1,17 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns="sap.m">
+	<Dialog id="withdrawPopup" title="{i18n>WITHDRAW_POPUP_TITLE}" type="Message">
+		<content>
+			<l:VerticalLayout >
+				<Text id="withdrawQuestionText" text="{i18n>WITHDRAW_POPUP_QUESTION}"/>
+				<Text id="withdrawConsequenceText" text="{i18n>POPUP_CONSEQUENCE_TEXT}"/>
+				<TextArea id="withdrawText" placeholder="{i18n>POP_UP_ADDITIONAL_COMMENTS}" rows="4" width="100%"/>
+			</l:VerticalLayout>
+		</content>
+		<beginButton>
+			<Button id="withdrawAnswerYesButton" press="onWithdrawDialogYESButton" text="{i18n>POPUP_ANSWER_OPTION_YES}"/>
+		</beginButton>
+		<endButton>
+			<Button id="withdrawAnswerNoButton" press="onWithdrawDialogNOButton" text="{i18n>POPUP_ANSWER_OPTION_NO}"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

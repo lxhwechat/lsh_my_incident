@@ -1,0 +1,103 @@
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xml:id="" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+	<edmx:DataServices m:DataServiceVersion="2.0" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata">
+		<Schema Namespace="SAPJam" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xml:id="Schema">
+			
+			<EntityType Name="Member">
+				<Key>
+					<PropertyRef Name="Id"/>
+				</Key>
+				<Property Name="Id" Type="Edm.String" Nullable="false" sap:filterable="false" sap:sortable="false" sap:updatable="false"/>
+				<Property Name="FirstName" Type="Edm.String" Nullable="true" sap:filterable="false" sap:sortable="false" sap:updatable="false"/>
+				<Property Name="LastName" Type="Edm.String" Nullable="true" sap:filterable="false" sap:sortable="false" sap:updatable="false"/>
+				<Property Name="Nickname" Type="Edm.String" Nullable="true" sap:filterable="false" sap:sortable="false" sap:updatable="false"/>
+				<Property Name="Title" Type="Edm.String" Nullable="true" sap:filterable="false" sap:sortable="false" sap:updatable="false"/>
+				<Property Name="Email" Type="Edm.String" Nullable="false" sap:filterable="false" sap:sortable="false" sap:updatable="false"/>
+				<Property Name="FullName" Type="Edm.String" Nullable="true" sap:filterable="false" sap:sortable="false" sap:updatable="false"/>
+				<Property Name="Role" Type="Edm.String" Nullable="false" sap:filterable="false" sap:sortable="false" sap:updatable="false"/>
+				<Property Name="IsFollowing" Type="Edm.Boolean" Nullable="false" sap:filterable="false" sap:sortable="false" sap:updatable="false"/>
+				<Property Name="WebURL" Type="Edm.String" Nullable="false" sap:filterable="false" sap:sortable="false" sap:updatable="false"/>
+				<Property Name="IsAway" Type="Edm.Boolean" Nullable="false" sap:filterable="false" sap:sortable="false" sap:updatable="false"/>
+				<NavigationProperty Name="Assistants" Relationship="SAPJam.Member_Assistants" FromRole="Member_Source" ToRole="Member_Target"/>
+				<NavigationProperty Name="AwayAlerts" Relationship="SAPJam.Member_AwayAlerts" FromRole="Member_Source" ToRole="AwayAlert_Target"/>
+				<NavigationProperty Name="DirectReports" Relationship="SAPJam.Member_DirectReports" FromRole="Member_Source" ToRole="Member_Target"/>
+				<NavigationProperty Name="FeedEntries" Relationship="SAPJam.Member_FeedEntries" FromRole="Member_Source" ToRole="FeedEntry_Target"/>
+				<NavigationProperty Name="Followers" Relationship="SAPJam.Member_Followers" FromRole="Member_Source" ToRole="Member_Target"/>
+				<NavigationProperty Name="Following" Relationship="SAPJam.Member_Following" FromRole="Member_Source" ToRole="Member_Target"/>
+				<NavigationProperty Name="Managers" Relationship="SAPJam.Member_Managers" FromRole="Member_Source" ToRole="Member_Target"/>
+				<NavigationProperty Name="MemberKudos" Relationship="SAPJam.Member_MemberKudos" FromRole="Member_Source" ToRole="MemberKudo_Target"/>
+				<NavigationProperty Name="MemberProfile" Relationship="SAPJam.Member_MemberProfile" FromRole="Member_Source" ToRole="MemberProfile_Target"/>
+				<NavigationProperty Name="ProfilePhoto" Relationship="SAPJam.Member_ProfilePhoto" FromRole="Member_Source" ToRole="Image_Target"/>
+				<NavigationProperty Name="ThumbnailImage" Relationship="SAPJam.Member_ThumbnailImage" FromRole="Member_Source" ToRole="ThumbnailImage_Target"/>
+			</EntityType>
+			<EntityType Name="MemberKudo">
+				<Key>
+					<PropertyRef Name="Id"/>
+				</Key>
+				<Property Name="Id" Type="Edm.String" Nullable="false" sap:filterable="false" sap:sortable="false" sap:updatable="false"/>
+				<Property Name="Comment" Type="Edm.String" Nullable="false" sap:filterable="false" sap:sortable="false" sap:updatable="false"/>
+				<Property Name="CreatedAt" Type="Edm.DateTimeOffset" Nullable="false" sap:filterable="false" sap:sortable="false" sap:updatable="false"/>
+				<Property Name="KudoType" Type="Edm.String" Nullable="false" sap:filterable="false" sap:sortable="false" sap:updatable="false"/>
+				<Property Name="IsVisible" Type="Edm.Boolean" Nullable="false" sap:filterable="false" sap:sortable="false" sap:updatable="false"/>
+				<NavigationProperty Name="Kudo" Relationship="SAPJam.MemberKudo_Kudo" FromRole="MemberKudo_Source" ToRole="Kudo_Target"/>
+				<NavigationProperty Name="Sender" Relationship="SAPJam.MemberKudo_Sender" FromRole="MemberKudo_Source" ToRole="Member_Target"/>
+			</EntityType>
+			<EntityType Name="MemberProfile">
+				<Key>
+					<PropertyRef Name="Id"/>
+				</Key>
+				<Property Name="Id" Type="Edm.String" Nullable="false" sap:filterable="false" sap:sortable="false" sap:updatable="false"/>
+				<Property Name="FollowersCount" Type="Edm.Int32" Nullable="false" sap:filterable="false" sap:sortable="false" sap:updatable="false"/>
+				<Property Name="FollowingCount" Type="Edm.Int32" Nullable="false" sap:filterable="false" sap:sortable="false" sap:updatable="false"/>
+				<Property Name="PrimaryEmailAddress" Type="Edm.String" Nullable="false" sap:filterable="false" sap:sortable="false" sap:updatable="false"/>
+				<Property Name="Twitter" Type="Edm.String" Nullable="false" sap:filterable="false" sap:sortable="false" sap:updatable="false"/>
+				<Property Name="Address" Type="Edm.String" Nullable="false" sap:filterable="false" sap:sortable="false" sap:updatable="false"/>
+				<NavigationProperty Name="PhoneNumbers" Relationship="SAPJam.MemberProfile_PhoneNumbers" FromRole="MemberProfile_Source" ToRole="PhoneNumber_Target"/>
+				<NavigationProperty Name="SecondaryEmailAddresses" Relationship="SAPJam.MemberProfile_SecondaryEmailAddresses" FromRole="MemberProfile_Source" ToRole="SecondaryEmailAddress_Target"/>
+			</EntityType>
+			
+			<EntityType Name="ThumbnailImage" m:HasStream="true">
+				<Key>
+					<PropertyRef Name="Id"/>
+					<PropertyRef Name="ThumbnailImageType"/>
+				</Key>
+				<Property Name="Id" Type="Edm.String" Nullable="false" sap:filterable="false" sap:sortable="false" sap:updatable="false"/>
+				<Property Name="ThumbnailImageType" Type="Edm.String" Nullable="false" sap:filterable="false" sap:sortable="false" sap:updatable="false"/>
+			</EntityType>
+			
+		
+			<Association Name="Member_ThumbnailImage">
+				<End Role="Member_Source" Type="SAPJam.Member" Multiplicity="0..1"/>
+				<End Role="ThumbnailImage_Target" Type="SAPJam.ThumbnailImage" Multiplicity="0..1"/>
+			</Association>
+			
+			<EntityContainer Name="SAPJam" m:IsDefaultEntityContainer="true">
+				
+				<EntitySet Name="Members" EntityType="SAPJam.Member" sap:creatable="false" sap:updatable="false" sap:deletable="false"/>
+				<EntitySet Name="MemberKudos" EntityType="SAPJam.MemberKudo" sap:creatable="true" sap:updatable="false" sap:deletable="false"/>
+				<EntitySet Name="MemberProfiles" EntityType="SAPJam.MemberProfile" sap:creatable="false" sap:updatable="false" sap:deletable="false"/>
+
+				<EntitySet Name="ThumbnailImages" EntityType="SAPJam.ThumbnailImage" sap:creatable="false" sap:updatable="false" sap:deletable="false"/>
+				
+			
+				<AssociationSet Name="Member_MemberProfile" Association="SAPJam.Member_MemberProfile" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="Members" Role="Member_Source"/>
+					<End EntitySet="MemberProfiles" Role="MemberProfile_Target"/>
+				</AssociationSet>
+				<AssociationSet Name="Member_ProfilePhoto" Association="SAPJam.Member_ProfilePhoto" sap:creatable="true" sap:deletable="true" sap:updatable="true">
+					<End EntitySet="Members" Role="Member_Source"/>
+					<End EntitySet="Images" Role="Image_Target"/>
+				</AssociationSet>
+				<AssociationSet Name="Member_ThumbnailImage" Association="SAPJam.Member_ThumbnailImage" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="Members" Role="Member_Source"/>
+					<End EntitySet="ThumbnailImages" Role="ThumbnailImage_Target"/>
+				</AssociationSet>
+				
+				<FunctionImport Name="Members_Autocomplete" m:HttpMethod="GET" EntitySet="Members" ReturnType="Collection(SAPJam.Member)">
+					<Parameter Name="Query" Type="Edm.String"/>
+					<Parameter Name="GroupId" Type="Edm.String"/>
+				</FunctionImport>
+				
+			</EntityContainer>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

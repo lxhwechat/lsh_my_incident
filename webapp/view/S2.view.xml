@@ -1,0 +1,53 @@
+<mvc:View controllerName="zwx.sm.itsm.myincidents.view.S2" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m"
+	xmlns:semantic="sap.m.semantic" xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<semantic:MasterPage id="page" title="{masterView>/title}" navButtonPress="onNavBack" showNavButton="false">
+		<semantic:subHeader>
+			<Bar id="headerBar">
+				<contentMiddle>
+					<SearchField id="searchField" showRefreshButton="{= !${device>/support/touch}}" tooltip="{i18n>MASTER_SEARCH_TOOLTIP}"
+						placeholder="{i18n>MASTER_SEARCH_PLACEHOLDER}" width="100%" search="onSearch"></SearchField>
+				</contentMiddle>
+			</Bar>
+		</semantic:subHeader>
+		<semantic:content>
+			<PullToRefresh id="pullToRefresh" visible="{device>/support/touch}" refresh="onRefresh"/>
+			<!-- For client side filtering add this to the items attribute:  parameters: {operationMode: 'Client'}}" -->
+			<List id="list"
+				items="{ path: '/MessageResultSet',sorter: [{ path: 'PostingDate', descending: true }, { path: 'ChangedAtDate', descending: true }] , groupHeaderFactory: '.createGroupHeader' }"
+				busyIndicatorDelay="{masterView>/delay}" noDataText="{masterView>/noDataText}"
+				mode="{= ${device>/system/phone} ? 'None' : 'SingleSelectMaster'}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished" selectionChange="onSelectionChange">
+				<infoToolbar>
+					<Toolbar active="true" id="filterBar" visible="{masterView>/isFilterBarVisible}" press="onOpenViewSettings">
+						<Title id="filterBarLabel" text="{masterView>/filterBarLabel}"/>
+						<ToolbarSpacer/>
+						<core:Icon src="sap-icon://filter" ariaLabelledBy="filterBarLabel"/>
+					</Toolbar>
+				</infoToolbar>
+				<items>
+					<!--Extension Point for ObjectList Item with default content to extend the Incident List-->
+					<core:ExtensionPoint name="extObjectListItem">
+						<ObjectListItem id="MAIN_LIST_ITEM" type="{= ${device>/system/phone} ? 'Active' : 'Inactive'}" title="{Description}" numberUnit="{ProcessTypeTxt}"
+							press="onSelectionChange" icon="{Icon}" unread="true" app:ObjectId="{ObjectId}" app:Guid="{Guid}">
+							<firstStatus>
+								<ObjectStatus id="firstStatusMaster" text="{PriorityTxt}" state="{PriorityState}"/>
+							</firstStatus>
+							<attributes>
+								<ObjectAttribute id="attributeMaster" text="{Concatstatuser}"/>
+							</attributes>
+						</ObjectListItem>
+					</core:ExtensionPoint>
+				</items>
+			</List>
+		</semantic:content>
+		<semantic:addAction>
+			<semantic:AddAction id="create" press="onAddPress"/>
+		</semantic:addAction>
+		<semantic:group>
+			<semantic:GroupSelect id="selectGroup" change="handleGroupChange"/>
+		</semantic:group>
+		<semantic:filter>
+			<semantic:FilterSelect id="filterSelect" change="handleFilterChange"/>
+		</semantic:filter>
+	</semantic:MasterPage>
+</mvc:View>
