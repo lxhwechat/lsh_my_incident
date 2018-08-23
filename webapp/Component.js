@@ -35,9 +35,21 @@ sap.ui.define([
 
 				// create the views based on the url/hash
 				this.getRouter().initialize();
-				
+
 				Formatter.init();
 				Util.init();
+
+				// startParameters
+				// if (this.oComponentData) {
+				// 	if (this.oComponentData.startupParameters.sapWxDelegater) {
+				// 		// init ODataModel header
+				// 		this.getModel().setHeaders({"sap-wx-delegater":this.oComponentData.startupParameters.sapWxDelegater[0]});
+				// 		// this.getModel().setHeaders({
+				// 		// 	"Authorization":"Bearer " + "AFBWh2xvHuin2eUDHYCOLlakVYHRjqDOHGV3R4ISrfkGXvM9"
+				// 		// });
+				// 		//
+				// 	}
+				// }
 			},
 
 			/**

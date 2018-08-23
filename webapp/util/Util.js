@@ -44,7 +44,7 @@ sap.ui.define([
 
 				// } else {
 
-				// this.setInAppCreation(true); 
+				// this.setInAppCreation(true);
 
 				// }
 				//   }
@@ -335,13 +335,13 @@ sap.ui.define([
 							this._bMessageOpen = false;
 						}.bind(this)
 
-					
+
 					}
 				);
 
 			}
 		},
-	
+
 
 		dateTime: function(oDate) {
 			var oDate2 = (oDate instanceof Date) ? oDate : new Date(oDate);

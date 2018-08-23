@@ -9,15 +9,16 @@ sap.ui.define([
 	"sap/ui/Device",
 	"zwx/sm/itsm/myincidents/util/Formatter",
 	"zwx/sm/itsm/myincidents/util/Util",
-	"zwx/sm/itsm/myincidents/util/TableOperations"
-], function(BaseController, JSONModel, History, Filter, FilterOperator, GroupHeaderListItem, Device, Formatter, Util, TableOperations) {
+	"zwx/sm/itsm/myincidents/util/TableOperations",
+	"sap/ui/core/routing/HashChanger"
+], function(BaseController, JSONModel, History, Filter, FilterOperator, GroupHeaderListItem, Device, Formatter, Util, TableOperations, HashChanger) {
 	"use strict";
 
 	return BaseController.extend("zwx.sm.itsm.myincidents.view.S2", {
 
 		formatter: Formatter,
 		_sIdentity: "zwx.sm.itsm.myincidents",
-		
+
 		// Test
 		/* =========================================================== */
 		/* lifecycle methods                                           */
@@ -249,7 +250,7 @@ sap.ui.define([
 
 			};
 
-			/**    
+			/**
 			 * @ControllerHook [Hook to update/initialize master data]
 			 * This hook is called in the onInit method of the Master controller
 			 * @callback sap.ca.scfld.md.controller.ScfldMasterController~extHookOnMasterInit
@@ -259,6 +260,11 @@ sap.ui.define([
 			if (this.extHookOnMasterInit) { // check whether any extension has implemented the hook...
 				this.extHookOnMasterInit(this); // ...and call it
 			}
+
+
+			// Oliver
+			this.hashChanger = HashChanger.getInstance();
+			this.hashChanger.init();
 		},
 
 		/* =========================================================== */
@@ -330,13 +336,23 @@ sap.ui.define([
 		},
 
 		onAddPress: function() {
+			// if (window["wechatLauncherEnabled"]) {
+			// 	this.zwechatLoadApp();
+			// 	return;
+			// }
+			// standalone workaround
+			sap.m.URLHelper.redirect('/sap/wechat/create_incident');
+			return;
+			
 			if (Util.getInAppCreation()) {
 				this.getRouter().navTo("toCreate", false);
-
 			} else {
 				this.navigateToExtCreation();
 			}
+		},
 
+		zwechatLoadApp: function() {
+			this.hashChanger.setHash("itsmcreate", true);
 		},
 
 		onMessageCreateExtern: function(sChannelId, sEventId, oData) {
@@ -643,7 +659,7 @@ sap.ui.define([
 				objectId: oItem.getBindingContext().getProperty("Guid")
 			}, bReplace);
 		},
-		
+
 		/**
 		 * Shows the selected item on the detail page
 		 * On phones a additional history entry is created
@@ -651,9 +667,9 @@ sap.ui.define([
 		 * @private
 		 */
 		_showEmptyPage: function() {
-		 
+
 				this.getRouter().getTargets().display("detailNoObjectsAvailable");
-	 
+
 		},
 
 		/**
@@ -714,7 +730,7 @@ sap.ui.define([
 			if (!sap.ui.Device.system.phone) {
 				var oSelectedItem = this._oList.getSelectedItem(),
 					sCurrentPath = oSelectedItem && oSelectedItem.getBindingContext().getPath();
-				// If sPath is given (that is, swipe case) the currently selected Incident should stay selected if it is not the removed one 
+				// If sPath is given (that is, swipe case) the currently selected Incident should stay selected if it is not the removed one
 				this._sPreselectedContextPath = sPath && sPath !== sCurrentPath && sCurrentPath;
 				// Now, this._sPreselectedContextPath is truthy exactly when the current selection should not be changed.
 				// Otherwise, the following loop is used to find the currently selected Incident in the list of all items and identify the preferred neighbour.
@@ -761,7 +777,7 @@ sap.ui.define([
 			if (!sap.ui.Device.system.phone) {
 				var oSelectedItem = this._oList.getSelectedItem(),
 					sCurrentPath = oSelectedItem && oSelectedItem.getBindingContext().getPath();
-				// If sPath is given (that is, swipe case) the currently selected PO should stay selected if it is not the removed one 
+				// If sPath is given (that is, swipe case) the currently selected PO should stay selected if it is not the removed one
 				this._sPreselectedContextPath = sPath && sPath !== sCurrentPath && sCurrentPath;
 				// Now, this._sPreselectedContextPath is truthy exactly when the current selection should not be changed.
 				// Otherwise, the following loop is used to find the currently selected Incident in the list of all items and identify the preferred neighbour.
@@ -836,7 +852,7 @@ sap.ui.define([
 
 			if (oItemToSelect) {
 				// Now we know which item to select
-				this._oList.setSelectedItem(oItemToSelect); // Mark it as selected in the master list		
+				this._oList.setSelectedItem(oItemToSelect); // Mark it as selected in the master list
 				this._showDetail(oItemToSelect);
 			} else {
 				if (createdObjectID) {
@@ -853,7 +869,7 @@ sap.ui.define([
 			aItems = Util.getItemsWithoutGroupHeader(aItems);
 
 			if (aItems.length === 0) {
-				// If there are no Incidents show the empty page, except when search is responsible for the empty list 
+				// If there are no Incidents show the empty page, except when search is responsible for the empty list
 				// and we do not return from the summary detail view. In the latter case stay on the last displayed detail view.
 				var sDetailViewName = this.oView.getParent().getParent().getCurrentDetailPage().getViewName();
 				if (this._sCurrentSearchTerm === "" || !this._bIsMultiselect && sDetailViewName ===
