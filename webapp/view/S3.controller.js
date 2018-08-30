@@ -923,10 +923,6 @@ sap.ui.define([
       oViewModel.setProperty("/delay", iOriginalViewBusyDelay);
     },
 
-    onNavBack: function() {
-      this.getRouter().navTo("master");
-    }
-
   });
 
 });

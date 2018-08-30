@@ -44,7 +44,7 @@ sap.ui.define([
 			getResourceBundle : function () {
 				return this.getOwnerComponent().getModel("i18n").getResourceBundle();
 			},
-			
+
 			/**
 			 * Convenience method for getting the event bus.
 			 * @public
@@ -61,14 +61,15 @@ sap.ui.define([
 			 * @public
 			 */
 			onNavBack : function() {
-				var sPreviousHash = History.getInstance().getPreviousHash(),
-					oCrossAppNavigator = sap.ushell.Container.getService("CrossApplicationNavigation");
-
-					if (sPreviousHash !== undefined || !oCrossAppNavigator.isInitialNavigation()) {
-					history.go(-1);
-				} else {
-					this.getRouter().navTo("master", {}, true);
-				}
+				// var sPreviousHash = History.getInstance().getPreviousHash(),
+				// 	oCrossAppNavigator = sap.ushell.Container.getService("CrossApplicationNavigation");
+				//
+				// 	if (sPreviousHash !== undefined || !oCrossAppNavigator.isInitialNavigation()) {
+				// 	history.go(-1);
+				// } else {
+				// 	this.getRouter().navTo("master", {}, true);
+				// }
+				this.getRouter().navTo("master");
 			}
 
 		});

@@ -361,10 +361,6 @@ sap.ui.define([
 		// 	}
 		// },
 
-		onNavBack: function() {
-			this.getRouter().navTo("master");
-		},
-
 		onNavButtonPress: function() {
 			var oDetailPage = sap.ui.core.Fragment.byId("componentPopover", "master");
 			var oListDetail = sap.ui.core.Fragment.byId("componentPopover", "PopoverList");
